@@ -3,4 +3,14 @@ import {
     createVuetify
 } from 'vuetify'
 
-export default createVuetify()
+import {
+    VDataTable,
+    VDataTableVirtual
+} from "vuetify/labs/VDataTable";
+
+export default createVuetify({
+    components: {
+        VDataTable,
+        VDataTableVirtual,
+    }
+})
