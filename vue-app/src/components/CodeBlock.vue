@@ -1,11 +1,11 @@
 <template>
-  <body data-prismjs-copy-timeout="800">
+  <div data-prismjs-copy-timeout="800">
     <pre><code
       class="line-numbers"
       :class="classObject()"
       data-prismjs-copy="📋COPY"
     >{{ code }}</code></pre>
-  </body>
+  </div>
 </template>
 
 <script setup>
