@@ -1,5 +1,9 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
+import CodeBlock from './components/CodeBlock.vue'
+
+import {ref} from 'vue';
+const code = ref('console.log("Hello World");\nvar a = 1;');
 </script>
 
 <template>
@@ -12,6 +16,8 @@ import HelloWorld from './components/HelloWorld.vue'
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
+  <CodeBlock :code="code" :config="{language:'javascript'}"/>
+  <CodeBlock />
 </template>
 
 <style scoped>
