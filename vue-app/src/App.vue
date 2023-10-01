@@ -3,7 +3,11 @@ import HelloWorld from './components/HelloWorld.vue'
 import CodeBlock from './components/CodeBlock.vue'
 
 import {ref} from 'vue';
-const code = ref('console.log("Hello World");\nvar a = 1;');
+
+const code_blocks = ref([
+  { code: 'console.log("Hello World");\nvar a = 1;', config: {name: 'sample1', language: 'javascript'}},
+  { code: 'console.log("Hello World");\nvar a = 2;', config: {name: 'sample2', language: 'javascript'}},
+])
 </script>
 
 <template>
@@ -16,8 +20,11 @@ const code = ref('console.log("Hello World");\nvar a = 1;');
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
-  <CodeBlock :code="code" :config="{language:'javascript'}"/>
-  <CodeBlock />
+
+  <div v-for="(code_block, index) in code_blocks">
+    <span>{{ index }} - {{ code_block.config.name }}</span>
+    <CodeBlock :code="code_block.code" :config="code_block.config"/>
+  </div>
 </template>
 
 <style scoped>
