@@ -27,6 +27,7 @@ const code_blocks = ref([
   >
     <template v-slot:default="{ item }">
       <h2> Item {{ item }} </h2>
+      <span v-for="n in Number(item)" :key="n"><h2> Item {{ item }} </h2></span>
     </template>
   </v-virtual-scroll>
 
